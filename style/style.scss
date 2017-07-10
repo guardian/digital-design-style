@@ -1,18 +1,33 @@
+@import 'reset';
 @import 'fonts';
 
 body {
   background-color: #f6f6f6;
-  font-family: 'Guardian Text Sans Web', 'Guardian Sans Web';
+  padding-top: 24px;
+  padding-bottom: 120px;
+  font-size: 18px;
+  font-family: 'Guardian Text Egyptian Web', 'Guardian Egyptian Web';
 }
 
 nav {
+  font-family: 'Guardian Text Sans Web', 'Guardian Sans Web';
   width: 220px;
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 20px;
+  position: fixed;
+  top: 24px;
+  transform: translateX(calc(-100% - 20px));
+  font-size: 16px;
+  ul {
+    padding: 3px 0 0;
+    li {
+      line-height: 24px;
+    }
+  }
 }
 
 main {
   width: 620px;
-  display: inline-block;
+  padding-left: 240px;
+  display: block;
+  position: relative;
+  margin: 0 auto;
 }
