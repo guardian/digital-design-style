@@ -9,11 +9,9 @@ module.exports = function(grunt) {
             }
         },
         watch: {
-          // options: {
-          //   livereload: true,
-          // },
-          // add this before closing body
-          // <script src="//localhost:35729/livereload.js"></script>
+          options: {
+            livereload: true,
+          },
           css: {
               files: '**/*.scss',
               tasks: ['sass']
@@ -44,9 +42,12 @@ module.exports = function(grunt) {
         connect: {
           server: {
             options: {
+              // uncomment below to use https server
+              // protocol: 'https',
               port: 8000,
               useAvailablePort: true,
-              base: 'build'
+              base: 'build',
+              livereload: true
             }
           }
         },
