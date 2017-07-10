@@ -41,6 +41,15 @@ module.exports = function(grunt) {
                 }
             }
         },
+        connect: {
+          server: {
+            options: {
+              port: 8000,
+              useAvailablePort: true,
+              base: 'build'
+            }
+          }
+        },
         'compile-handlebars': {
             allStatic: {
                 files: [{
@@ -59,8 +68,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-wget');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
   grunt.registerTask('compile', ['clean','compile-handlebars']);
-  grunt.registerTask('default', ['sass','wget','compile','watch']);
+  grunt.registerTask('default', ['sass','wget','compile','connect','watch']);
 
 };
