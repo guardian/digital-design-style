@@ -1,5 +1,8 @@
+@import 'fonts';
+
 body {
   background-color: #f6f6f6;
+  font-family: 'Guardian Text Sans Web', 'Guardian Sans Web';
 }
 
 nav {
@@ -12,8 +15,4 @@ nav {
 main {
   width: 620px;
   display: inline-block;
-}
-
-.something {
-    color: #005689;
 }
