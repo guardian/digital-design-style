@@ -4,19 +4,34 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 files: {
-                    'style/style.css' : 'style/style.scss'
+                    'build/style.css' : 'style/style.scss'
                 }
             }
         },
         watch: {
-            css: {
-                files: '**/*.scss',
-                tasks: ['sass']
+          // options: {
+          //   livereload: true,
+          // },
+          // add this before closing body
+          // <script src="//localhost:35729/livereload.js"></script>
+          css: {
+              files: '**/*.scss',
+              tasks: ['sass']
+          },
+          html: {
+              files: ['templates/*.html', 'templates/*.handlebars'],
+              tasks: ['compile']
+          },
+          configFiles: {
+            files: [ 'Gruntfile.js', 'config/*.js' ],
+            options: {
+              reload: true
             }
+          }
         },
         clean: {
           build: {
-            src: 'build'
+            src: 'build/*.html'
           }
         },
         wget: {
@@ -45,7 +60,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-wget');
 
-  grunt.registerTask('compile', ['wget', 'clean', 'compile-handlebars']);
-  grunt.registerTask('default', ['sass','compile','watch']);
+  grunt.registerTask('compile', ['clean','compile-handlebars']);
+  grunt.registerTask('default', ['sass','wget','compile','watch']);
 
 };
