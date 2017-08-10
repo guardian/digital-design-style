@@ -1,17 +1,26 @@
-<nav>
-    <ul>
-        {{#each Sections}}
-            <li data-section-target='{{Section}}'>{{Title}}</li>
-        {{/each}}
-    </ul>
-</nav>
+<div class="gud-style__header">
+    <div class="gud-style__intro">
+        <h1>{{Intro}}</h1>
+    </div>
+</div>
 
-  <h1>{{Intro}}</h1>
-aagcaadkjfhss
+<main>
+    <nav>
+        <ul>
+            {{#each Sections}}
+                <li data-section-target='{{Section}}'>{{Title}}</li>
+            {{/each}}
+        </ul>
+    </nav>
 
-      {{#each Sections}}
-         <section data-section-name='{{Section}}'>
+    {{#each Sections}}
+         <section data-section-name='{{Section}}' class="{{Color}}">
              <h2>{{Title}}</h2>
              <p>{{Text}}</p>
+                 {{#each Images}}
+                    <div class="image-wrapper">
+                        <img src="{{this}}">
+                    </div>
+                 {{/each}}
         </section>
-      {{/each}}
+    {{/each}}

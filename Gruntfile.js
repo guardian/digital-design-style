@@ -30,6 +30,9 @@ module.exports = function(grunt) {
         clean: {
           build: {
             src: 'build/*.html'
+          },
+          data: {
+            src: 'data/*.json'
           }
         },
         wget: {
@@ -71,7 +74,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-wget');
   grunt.loadNpmTasks('grunt-contrib-connect');
 
-  grunt.registerTask('compile', ['clean','compile-handlebars']);
-  grunt.registerTask('default', ['sass','wget','compile','connect','watch']);
+  grunt.registerTask('compile', ['clean','wget','compile-handlebars']);
+  grunt.registerTask('default', ['sass','clean','wget','compile-handlebars','connect','watch']);
 
 };

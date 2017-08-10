@@ -1,9 +1,9 @@
 @import 'reset';
 @import 'fonts';
+@import 'mq';
 
 body {
-  background-color: #f6f6f6;
-  padding-top: 24px;
+  background-color: #ffffff;
   padding-bottom: 120px;
   font-size: 18px;
   font-family: 'Guardian Text Egyptian Web', 'Guardian Egyptian Web';
@@ -30,4 +30,62 @@ main {
   display: block;
   position: relative;
   margin: 0 auto;
+}
+
+section {
+
+    p {
+        font-size: 16px;
+        line-height: 20px;
+
+    }
+    h2 {
+        font-weight: 200;
+        font-family: "Guardian Egyptian Web";
+        margin-top: 12px;
+        margin-bottom: 24px;
+
+        @include mq($from: desktop) {
+            font-size: 32px;
+        }
+    }
+
+    .image-wrapper {
+        width: 100%;
+        background-color: grey;
+
+        img {
+            @include mq($from: desktop) {
+                width: 100%;
+            }
+        }
+    }
+
+    &.blue {
+        .image-wrapper {
+            background-color: #005689;
+        }
+    }
+}
+
+.gud-style__header {
+    background-color: #f6f6f6;
+    height: 100vh;
+    position: relative;
+
+    .gud-style__intro {
+        position: absolute;
+        bottom: 50px;
+        width: 100%;
+    }
+
+    h1 {
+        width: 380px;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: "Guardian Egyptian Web";
+        font-size: 22px;
+        line-height: 26px;
+        font-weight: 200;
+    }
 }
