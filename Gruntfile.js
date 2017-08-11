@@ -20,6 +20,10 @@ module.exports = function(grunt) {
               files: ['templates/*.html', 'templates/*.handlebars'],
               tasks: ['compile']
           },
+          js: {
+            files: ['js/*.js'],
+            tasks: ['copy']
+          },
           configFiles: {
             files: [ 'Gruntfile.js', 'config/*.js' ],
             options: {
@@ -41,6 +45,13 @@ module.exports = function(grunt) {
                       'data/style-guide.json': 'https://interactive.guim.co.uk/docsdata-test/1ng1nT5BFLBV6rFLCdJsUrFBxSlR9p0x4hB9tJL_uRlM.json',
                 }
             }
+        },
+        copy: {
+          main: {
+            files: [
+              {expand: true, src: ['js/**.js'], dest: 'build'}
+            ]
+          }
         },
         connect: {
           server: {
@@ -73,6 +84,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-wget');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   grunt.registerTask('compile', ['clean','wget','compile-handlebars']);
   grunt.registerTask('default', ['sass','clean','wget','compile-handlebars','connect','watch']);

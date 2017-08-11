@@ -5,22 +5,30 @@
 </div>
 
 <main>
-    <nav>
+    <!-- <nav>
         <ul>
             {{#each Sections}}
                 <li data-section-target='{{Section}}'>{{Title}}</li>
             {{/each}}
         </ul>
-    </nav>
+    </nav> -->
 
     {{#each Sections}}
-         <section data-section-name='{{Section}}' class="{{Color}}">
+         <section data-section-name='{{Section}}'>
+           <div class='slide intro'>
              <h2>{{Title}}</h2>
-             <p>{{Text}}</p>
-                 {{#each Images}}
-                    <div class="image-wrapper">
-                        <img src="{{this}}">
-                    </div>
-                 {{/each}}
+           </div>
+
+           {{#each slides}}
+            <div class='slide'>
+              <div class='text'>
+                <p>{{Text}}</p>
+              </div>
+              <div class='image'>
+                image: {{Image}}
+              </div>
+            </div>
+           {{/each}}
         </section>
     {{/each}}
+</main>

@@ -9,64 +9,70 @@ body {
   font-family: 'Guardian Text Egyptian Web', 'Guardian Egyptian Web';
 }
 
-nav {
-  font-family: 'Guardian Text Sans Web', 'Guardian Sans Web';
-  width: 220px;
-  position: fixed;
-  top: 24px;
-  transform: translateX(calc(-100% - 20px));
-  font-size: 16px;
-  ul {
-    padding: 3px 0 0;
-    li {
-      line-height: 24px;
-    }
-  }
-}
-
-main {
-  width: 620px;
-  padding-left: 240px;
-  display: block;
-  position: relative;
-  margin: 0 auto;
-}
+// nav {
+//   font-family: 'Guardian Text Sans Web', 'Guardian Sans Web';
+//   width: 220px;
+//   position: fixed;
+//   top: 24px;
+//   transform: translateX(calc(-100% - 20px));
+//   font-size: 16px;
+//   ul {
+//     padding: 3px 0 0;
+//     li {
+//       line-height: 24px;
+//     }
+//   }
+// }
 
 section {
-
-    p {
-        font-size: 16px;
-        line-height: 20px;
-
-    }
     h2 {
         font-weight: 200;
         font-family: "Guardian Egyptian Web";
         margin-top: 12px;
         margin-bottom: 24px;
-
-        @include mq($from: desktop) {
-            font-size: 32px;
-        }
+        font-size: 72px;
+        font-weight: 100;
+        padding: 12px;
     }
 
-    .image-wrapper {
-        width: 100%;
-        background-color: grey;
-
-        img {
-            @include mq($from: desktop) {
-                width: 100%;
-            }
+    .slide {
+      height: 67vh;
+      &.intro {
+        height: 100vh;
+        border-top: 2px solid #005689;
+      }
+      .text {
+        width: 50vw;
+        p {
+          font-size: 24px;
+          line-height: 26px;
+          font-family: 'Guardian Egyptian Web';
+          font-weight: 400;
+          color: #333;
+          padding: 12px;
         }
-    }
-
-    &.blue {
-        .image-wrapper {
-            background-color: #005689;
+      }
+      .image {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 50vw;
+        height: 100vh;
+        background-color: #EFEFEC;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 400ms;
+      }
+      &.on {
+        .image {
+          visibility: visible;
+          opacity: 1;
         }
+      }
     }
 }
+
 
 .gud-style__header {
     background-color: #f6f6f6;
