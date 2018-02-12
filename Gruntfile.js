@@ -4,7 +4,7 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 files: {
-                    'build/style.css' : 'style/style.scss'
+                    'docs/style.css' : 'style/style.scss'
                 }
             }
         },
@@ -32,8 +32,8 @@ module.exports = function(grunt) {
           }
         },
         clean: {
-          build: {
-            src: 'build/*.html'
+          docs: {
+            src: 'docs/*.html'
           },
           data: {
             src: 'data/*.json'
@@ -49,7 +49,7 @@ module.exports = function(grunt) {
         copy: {
           main: {
             files: [
-              {expand: true, src: ['js/**.js'], dest: 'build'}
+              {expand: true, src: ['js/**.js'], dest: 'docs'}
             ]
           }
         },
@@ -60,7 +60,7 @@ module.exports = function(grunt) {
               // protocol: 'https',
               port: 8000,
               useAvailablePort: true,
-              base: 'build',
+              base: 'docs',
               livereload: true
             }
           }
@@ -69,7 +69,7 @@ module.exports = function(grunt) {
             allStatic: {
                 files: [{
                     src: 'templates/template.handlebars',
-                    dest: 'build/index.html'
+                    dest: 'docs/index.html'
                 }],
             preHTML: 'templates/header.html',
             postHTML: 'templates/footer.html',
@@ -88,5 +88,4 @@ module.exports = function(grunt) {
 
   grunt.registerTask('compile', ['clean','wget','compile-handlebars']);
   grunt.registerTask('default', ['sass','clean','wget','compile-handlebars','connect','watch']);
-
 };
