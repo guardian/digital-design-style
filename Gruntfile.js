@@ -4,7 +4,7 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 files: {
-                    'docs/style.css' : 'style/style.scss'
+                    'build/style.css' : 'style/style.scss'
                 }
             }
         },
@@ -32,11 +32,14 @@ module.exports = function(grunt) {
           }
         },
         clean: {
-          docs: {
-            src: 'docs/*.html'
+          build: {
+            src: 'build/*.html'
           },
           data: {
             src: 'data/*.json'
+          },
+          root: {
+              src: '*.html'
           }
         },
         wget: {
@@ -49,9 +52,14 @@ module.exports = function(grunt) {
         copy: {
           main: {
             files: [
-              {expand: true, src: ['js/**.js'], dest: 'docs'}
+                {expand: true, flatten: true, src: ['js/**.js'], dest: 'build', filter: 'isFile'},
             ]
-          }
+            },
+            root: {
+              files: [
+                {expand: true, flatten: true, src: ['build/**'], dest: '', filter: 'isFile'},
+              ]
+            }
         },
         connect: {
           server: {
@@ -60,7 +68,7 @@ module.exports = function(grunt) {
               // protocol: 'https',
               port: 8000,
               useAvailablePort: true,
-              base: 'docs',
+              base: 'build',
               livereload: true
             }
           }
@@ -69,7 +77,7 @@ module.exports = function(grunt) {
             allStatic: {
                 files: [{
                     src: 'templates/template.handlebars',
-                    dest: 'docs/index.html'
+                    dest: 'build/index.html'
                 }],
             preHTML: 'templates/header.html',
             postHTML: 'templates/footer.html',
@@ -86,6 +94,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-copy');
 
+  grunt.registerTask('build', ['clean:root','copy']);
   grunt.registerTask('compile', ['clean','wget','compile-handlebars']);
-  grunt.registerTask('default', ['sass','clean','wget','compile-handlebars','connect','watch']);
+  grunt.registerTask('default', ['sass','clean', 'wget','compile-handlebars','build','connect','watch']);
 };
