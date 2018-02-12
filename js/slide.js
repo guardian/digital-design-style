@@ -1,27 +1,36 @@
 
-var dist = 0;
-
 window.onscroll = function() {
-  var tester = document.querySelector('.slide .text');
-  var wrapper = document.querySelector('body');
-	var visible = checkVisible(tester, dist);
+    var wrapper = document.querySelector('body');
+    var textSlides = document.querySelectorAll('.slide .text');
 
-  if (visible) {
-    document.querySelector('.slide .text').parentElement.classList.add('on');
-  } else {
-    document.querySelector('.slide .text').parentElement.classList.remove('on');
-  }
+    for (var i = 0; i<textSlides.length; i++) {
+        var textSlide = textSlides[i];
+        var visible = checkVisible(textSlide);
+        if (visible) {
+            textSlide.parentElement.classList.add('on');
+        } else {
+            textSlide.parentElement.classList.remove('on');
+        }
+    }
 };
 
 
-function checkVisible(elm, threshold, mode) {
-  threshold = threshold || 0;
-  mode = mode || 'visible';
-
+function checkVisible(elm) {
   var rect = elm.getBoundingClientRect();
-  var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
-  var above = rect.bottom - threshold < 0;
-  var below = rect.top - viewHeight + threshold >= 0;
-
-  return mode === 'above' ? above : (mode === 'below' ? below : !above && !below);
+  // var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+  var viewHeight = window.innerHeight;
+  return !(rect.bottom < 0 || rect.top - viewHeight >= -viewHeight/2);
 }
+
+
+// function checkVisible(elm, threshold, mode) {
+//   threshold = threshold || 0;
+//   mode = mode || 'visible';
+//
+//   var rect = elm.getBoundingClientRect();
+//   var viewHeight = window.innerHeight;
+//   var above = rect.bottom - threshold < 0;
+//   var below = rect.top - viewHeight + threshold >= 0;
+//
+//   return mode === 'above' ? above : (mode === 'below' ? below : !above && !below);
+// }
