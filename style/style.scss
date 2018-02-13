@@ -353,6 +353,24 @@ section {
             left: 0;
             bottom: 50px;
         }
+
+        h1 {
+            &:before {
+                background-image: url(https://uploads.guim.co.uk/2018/02/13/4rules.svg);
+                content: '';
+                display: block;
+                height: 12px;
+                width: 250px;
+                background-size: 100%;
+                background-repeat: no-repeat;
+            }
+
+            &.gud-style__date {
+                &:before {
+                    display: none;
+                }
+            }
+        }
     }
 
     .gud-style__headline {

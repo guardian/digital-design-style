@@ -613,6 +613,16 @@ section:first-of-type .slide:first-child .image {
         width: 93%;
         left: 0;
         bottom: 50px; } }
+    .gud-style__header .gud-style__intro h1:before {
+      background-image: url(https://uploads.guim.co.uk/2018/02/13/4rules.svg);
+      content: '';
+      display: block;
+      height: 12px;
+      width: 250px;
+      background-size: 100%;
+      background-repeat: no-repeat; }
+    .gud-style__header .gud-style__intro h1.gud-style__date:before {
+      display: none; }
   .gud-style__header .gud-style__headline svg {
     position: relative;
     left: 2%;
