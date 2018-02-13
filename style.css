@@ -384,7 +384,7 @@ section .slide {
   section .slide.intro {
     height: 100vh; }
   section .slide .text {
-    width: 100%;
+    width: 80%;
     position: relative;
     height: auto; }
     @media all and (min-width: 46.25em) {
@@ -418,7 +418,8 @@ section .slide {
     width: 100%;
     height: 100vh;
     background-color: #fff;
-    visibility: hidden; }
+    visibility: hidden;
+    position: relative; }
     @media all and (min-width: 46.25em) {
       section .slide .image {
         position: fixed;
@@ -472,7 +473,9 @@ section:first-of-type .slide:first-child .image {
   background-color: #ffe500;
   height: 100vh;
   position: relative;
-  z-index: 10; }
+  z-index: 10;
+  width: 100%;
+  overflow-x: hidden; }
   .gud-style__header .gud-style__logo {
     position: absolute;
     top: 10px;
@@ -488,11 +491,22 @@ section:first-of-type .slide:first-child .image {
   .gud-style__header .gud-style__intro {
     position: absolute;
     bottom: 50px;
-    width: 100%; }
+    width: 90%;
+    left: 2%; }
+    @media all and (min-width: 46.25em) {
+      .gud-style__header .gud-style__intro {
+        width: 100%;
+        left: 0; } }
   .gud-style__header .gud-style__headline svg {
     position: relative;
-    left: 14.9vw;
-    top: 76px; }
+    left: 2%;
+    top: 76px;
+    width: 90%; }
+    @media all and (min-width: 46.25em) {
+      .gud-style__header .gud-style__headline svg {
+        left: 14.9vw;
+        top: 76px;
+        width: auto; } }
   .gud-style__header .gud-style__headline:before {
     content: '';
     display: block;
@@ -502,15 +516,22 @@ section:first-of-type .slide:first-child .image {
     left: 30vw;
     right: 0;
     width: 1px;
-    background-color: #121212; }
+    background-color: #121212;
+    display: none; }
+    @media all and (min-width: 46.25em) {
+      .gud-style__header .gud-style__headline:before {
+        display: block; } }
   .gud-style__header h1 {
-    width: 380px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     font-family: 'GH Guardian Headline';
     font-size: 20px;
     line-height: 22px;
     font-weight: 900; }
+    @media all and (min-width: 46.25em) {
+      .gud-style__header h1 {
+        width: 380px; } }
   .gud-style__header .gud-style__date {
     color: #c70000; }
 

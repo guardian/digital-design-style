@@ -41,7 +41,7 @@ section {
         height: 100vh;
       }
       .text {
-        width: 100%;
+        width: 80%;
         position: relative;
         height: auto;
 
@@ -82,6 +82,7 @@ section {
         height: 100vh;
         background-color: #fff;
         visibility: hidden;
+        position: relative;
 
         @include mq($from: tablet) {
             position: fixed;
@@ -151,11 +152,14 @@ section {
 }
 
 
+
 .gud-style__header {
     background-color: #ffe500;
     height: 100vh;
     position: relative;
     z-index: 10;
+    width: 100%;
+    overflow-x: hidden;
 
     .gud-style__logo {
         position: absolute;
@@ -178,14 +182,27 @@ section {
     .gud-style__intro {
         position: absolute;
         bottom: 50px;
-        width: 100%;
+        width: 90%;
+        left: 2%;
+
+        @include mq($from: tablet) {
+            width: 100%;
+            left: 0;
+        }
     }
 
     .gud-style__headline {
         svg {
             position: relative;
-            left: 14.9vw;
+            left: 2%;
             top: 76px;
+            width: 90%;
+
+            @include mq($from: tablet) {
+                left: 14.9vw;
+                top: 76px;
+                width: auto;
+            }
         }
         &:before {
             content: '';
@@ -197,17 +214,26 @@ section {
             right: 0;
             width: 1px;
             background-color: #121212;
+            display: none;
+
+            @include mq($from: tablet) {
+                display: block;
+            }
         }
     }
 
     h1 {
-        width: 380px;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
         font-family:'GH Guardian Headline';
         font-size: 20px;
         line-height: 22px;
         font-weight: 900;
+
+        @include mq($from: tablet) {
+            width: 380px;
+        }
     }
 
     .gud-style__date {
