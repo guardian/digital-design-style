@@ -48,9 +48,11 @@
                 <p><span class="title">{{../Title}}</span>{{Text}}</p>
               </div>
               <div {{#if Colour}}style="background-color:{{Colour}}"{{/if}} class='image' data-section-number='{{inc @index}} / {{../slides.length}}' data-section-title='{{../Title}}'>
+                  {{#unless colourPalette}}
                   <div class='image__inner'>
                       <img src="{{Image}}">
                   </div>
+                  {{/unless}}
 
                   {{#if colourPalette}}
                   <div class="colour__list">

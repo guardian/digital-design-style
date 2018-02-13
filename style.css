@@ -659,12 +659,19 @@ section:first-of-type .slide:first-child .image {
     color: #c70000; }
 
 .colour__list {
-  max-width: 700px;
-  max-height: 100%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-34%, -50%);
-  left: 38%; }
+  position: relative;
+  width: 100%;
+  left: 10px;
+  margin-bottom: 24px; }
+  @media all and (min-width: 46.25em) {
+    .colour__list {
+      max-width: 700px;
+      max-height: 100%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-34%, -50%);
+      left: 38%;
+      margin-bottom: 0px; } }
   .colour__list ul {
     display: flex;
     flex-direction: row;
