@@ -22,6 +22,16 @@ function checkVisible(elm) {
   return !(rect.bottom < 0 || rect.top - viewHeight >= -viewHeight/2);
 }
 
+function hamburgler() {
+    var ham = document.querySelector('.gud-style__hamburger');
+    var overlay = document.querySelector('.gud-style__menu_overlay')
+    ham.addEventListener('click', function(){
+        this.classList.toggle('open');
+        overlay.classList.toggle('open');
+    });
+}
+
+hamburgler();
 
 // function checkVisible(elm, threshold, mode) {
 //   threshold = threshold || 0;

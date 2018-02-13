@@ -211,12 +211,101 @@ section {
     width: 100%;
     overflow-x: hidden;
 
+    .gud-style__menu_overlay {
+        height: 100vh;
+        width: 100%;
+        background-color: #00b2ff;
+        z-index: 10;
+        position:fixed;
+        overflow: hidden;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity ease-in-out 0.2s;
+
+        &.open {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .sections {
+            position: absolute;
+            left: 10px;
+            top: 120px;
+            width: 98%;
+
+            @include mq($from: tablet) {
+                width: 100%;
+            }
+
+            h1 {
+                font-size: 34px;
+                line-height: 36px;
+                border-top: 1px solid #121212;
+                margin-bottom: 12px;
+                width: 100%;
+
+                @include mq($from: tablet) {
+                    font-size: 50px;
+                    line-height: 52px;
+                }
+            }
+        }
+    }
+
+    .gud-style__hamburger {
+        position:fixed;
+        top: 10px;
+        left: 10px;
+        background-color: #121212;
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        z-index: 20;
+
+        .hamburger-one, .hamburger-two, .hamburger-three {
+            height: 4px;
+            background-color: #fff;
+            width: 30px;
+            position: relative;
+            left: 10px;
+        }
+
+        .hamburger {
+            &-one {
+                top: 14px;
+            }
+            &-two {
+                top: 19px;
+            }
+            &-three {
+                top: 24px;
+            }
+        }
+
+        &.open {
+            .hamburger {
+                &-one {
+                    top: 22px;
+                    transform: rotate(45deg);
+                }
+                &-two {
+                    opacity: 0;
+                }
+                &-three {
+                    top: 14px;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+
     .gud-style__logo {
         position: absolute;
         top: 10px;
         right: 10px;
         width: 150px;
         height: auto;
+        z-index: 20;
 
         @include mq($from: tablet) {
             right: 50px;
@@ -238,7 +327,7 @@ section {
         position: absolute;
         bottom: 20px;
         width: 76%;
-        left: 2%;
+        left: 10px;
 
         @include mq($from: tablet) {
             width: 100%;

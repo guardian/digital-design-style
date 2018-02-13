@@ -514,12 +514,73 @@ section:first-of-type .slide:first-child .image {
   z-index: 10;
   width: 100%;
   overflow-x: hidden; }
+  .gud-style__header .gud-style__menu_overlay {
+    height: 100vh;
+    width: 100%;
+    background-color: #00b2ff;
+    z-index: 10;
+    position: fixed;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity ease-in-out 0.2s; }
+    .gud-style__header .gud-style__menu_overlay.open {
+      visibility: visible;
+      opacity: 1; }
+    .gud-style__header .gud-style__menu_overlay .sections {
+      position: absolute;
+      left: 10px;
+      top: 120px;
+      width: 98%; }
+      @media all and (min-width: 46.25em) {
+        .gud-style__header .gud-style__menu_overlay .sections {
+          width: 100%; } }
+      .gud-style__header .gud-style__menu_overlay .sections h1 {
+        font-size: 34px;
+        line-height: 36px;
+        border-top: 1px solid #121212;
+        margin-bottom: 12px;
+        width: 100%; }
+        @media all and (min-width: 46.25em) {
+          .gud-style__header .gud-style__menu_overlay .sections h1 {
+            font-size: 50px;
+            line-height: 52px; } }
+  .gud-style__header .gud-style__hamburger {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #121212;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    z-index: 20; }
+    .gud-style__header .gud-style__hamburger .hamburger-one, .gud-style__header .gud-style__hamburger .hamburger-two, .gud-style__header .gud-style__hamburger .hamburger-three {
+      height: 4px;
+      background-color: #fff;
+      width: 30px;
+      position: relative;
+      left: 10px; }
+    .gud-style__header .gud-style__hamburger .hamburger-one {
+      top: 14px; }
+    .gud-style__header .gud-style__hamburger .hamburger-two {
+      top: 19px; }
+    .gud-style__header .gud-style__hamburger .hamburger-three {
+      top: 24px; }
+    .gud-style__header .gud-style__hamburger.open .hamburger-one {
+      top: 22px;
+      transform: rotate(45deg); }
+    .gud-style__header .gud-style__hamburger.open .hamburger-two {
+      opacity: 0; }
+    .gud-style__header .gud-style__hamburger.open .hamburger-three {
+      top: 14px;
+      transform: rotate(-45deg); }
   .gud-style__header .gud-style__logo {
     position: absolute;
     top: 10px;
     right: 10px;
     width: 150px;
-    height: auto; }
+    height: auto;
+    z-index: 20; }
     @media all and (min-width: 46.25em) {
       .gud-style__header .gud-style__logo {
         right: 50px;
@@ -534,7 +595,7 @@ section:first-of-type .slide:first-child .image {
     position: absolute;
     bottom: 20px;
     width: 76%;
-    left: 2%; }
+    left: 10px; }
     @media all and (min-width: 46.25em) {
       .gud-style__header .gud-style__intro {
         width: 100%;
