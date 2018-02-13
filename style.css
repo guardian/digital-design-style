@@ -558,13 +558,20 @@ section:first-of-type .slide:first-child .image {
     height: 50px;
     width: 50px;
     z-index: 20;
-    border: 1px solid #121212; }
+    background-color: #121212; }
+    @media all and (min-width: 46.25em) {
+      .gud-style__header .gud-style__hamburger {
+        border: 1px solid #121212;
+        background-color: transparent; } }
     .gud-style__header .gud-style__hamburger .hamburger-one, .gud-style__header .gud-style__hamburger .hamburger-two, .gud-style__header .gud-style__hamburger .hamburger-three {
       height: 2px;
-      background-color: #121212;
+      background-color: #fff;
       width: 30px;
       position: relative;
       left: 10px; }
+      @media all and (min-width: 46.25em) {
+        .gud-style__header .gud-style__hamburger .hamburger-one, .gud-style__header .gud-style__hamburger .hamburger-two, .gud-style__header .gud-style__hamburger .hamburger-three {
+          background-color: #121212; } }
     .gud-style__header .gud-style__hamburger .hamburger-one {
       top: 17px; }
     .gud-style__header .gud-style__hamburger .hamburger-two {

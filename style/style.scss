@@ -269,15 +269,24 @@ section {
         height: 50px;
         width: 50px;
         z-index: 20;
-        border: 1px solid #121212;
+        background-color: #121212;
+
+        @include mq($from: tablet) {
+            border: 1px solid #121212;
+            background-color: transparent;
+        }
 
 
         .hamburger-one, .hamburger-two, .hamburger-three {
             height: 2px;
-            background-color: #121212;
+            background-color: #fff;
             width: 30px;
             position: relative;
             left: 10px;
+
+            @include mq($from: tablet) {
+                background-color: #121212;
+            }
         }
 
         .hamburger {
