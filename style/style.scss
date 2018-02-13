@@ -68,7 +68,7 @@ section {
           line-height: 20px;
           font-family:'GH Guardian Headline';
           font-weight: 400;
-          color: #333;
+          color: #121212;
           position: relative;
           top: 0px;
           transform: none;
@@ -237,6 +237,15 @@ section {
                 width: 100%;
             }
 
+            a {
+                color: #121212;
+                text-decoration: none;
+
+                &:hover {
+                    border-bottom: 1px solid inherit;
+                }
+            }
+
             h1 {
                 font-size: 34px;
                 line-height: 36px;
@@ -256,15 +265,16 @@ section {
         position:fixed;
         top: 10px;
         left: 10px;
-        background-color: #121212;
         border-radius: 50%;
         height: 50px;
         width: 50px;
         z-index: 20;
+        border: 1px solid #121212;
+
 
         .hamburger-one, .hamburger-two, .hamburger-three {
-            height: 4px;
-            background-color: #fff;
+            height: 2px;
+            background-color: #121212;
             width: 30px;
             position: relative;
             left: 10px;
@@ -272,27 +282,27 @@ section {
 
         .hamburger {
             &-one {
-                top: 14px;
+                top: 17px;
             }
             &-two {
-                top: 19px;
+                top: 22px;
             }
             &-three {
-                top: 24px;
+                top: 27px;
             }
         }
 
         &.open {
             .hamburger {
                 &-one {
-                    top: 22px;
+                    top: 23px;
                     transform: rotate(45deg);
                 }
                 &-two {
                     opacity: 0;
                 }
                 &-three {
-                    top: 14px;
+                    top: 19px;
                     transform: rotate(-45deg);
                 }
             }
@@ -330,7 +340,7 @@ section {
         left: 10px;
 
         @include mq($from: tablet) {
-            width: 100%;
+            width: 93%;
             left: 0;
             bottom: 50px;
         }
@@ -385,7 +395,7 @@ section {
         font-weight: 900;
 
         @include mq($from: tablet) {
-            width: 380px;
+            width: 280px;
         }
     }
 

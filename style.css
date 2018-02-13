@@ -402,7 +402,7 @@ section .slide {
       line-height: 20px;
       font-family: 'GH Guardian Headline';
       font-weight: 400;
-      color: #333;
+      color: #121212;
       position: relative;
       top: 0px;
       transform: none;
@@ -535,6 +535,11 @@ section:first-of-type .slide:first-child .image {
       @media all and (min-width: 46.25em) {
         .gud-style__header .gud-style__menu_overlay .sections {
           width: 100%; } }
+      .gud-style__header .gud-style__menu_overlay .sections a {
+        color: #121212;
+        text-decoration: none; }
+        .gud-style__header .gud-style__menu_overlay .sections a:hover {
+          border-bottom: 1px solid inherit; }
       .gud-style__header .gud-style__menu_overlay .sections h1 {
         font-size: 34px;
         line-height: 36px;
@@ -549,30 +554,30 @@ section:first-of-type .slide:first-child .image {
     position: fixed;
     top: 10px;
     left: 10px;
-    background-color: #121212;
     border-radius: 50%;
     height: 50px;
     width: 50px;
-    z-index: 20; }
+    z-index: 20;
+    border: 1px solid #121212; }
     .gud-style__header .gud-style__hamburger .hamburger-one, .gud-style__header .gud-style__hamburger .hamburger-two, .gud-style__header .gud-style__hamburger .hamburger-three {
-      height: 4px;
-      background-color: #fff;
+      height: 2px;
+      background-color: #121212;
       width: 30px;
       position: relative;
       left: 10px; }
     .gud-style__header .gud-style__hamburger .hamburger-one {
-      top: 14px; }
+      top: 17px; }
     .gud-style__header .gud-style__hamburger .hamburger-two {
-      top: 19px; }
+      top: 22px; }
     .gud-style__header .gud-style__hamburger .hamburger-three {
-      top: 24px; }
+      top: 27px; }
     .gud-style__header .gud-style__hamburger.open .hamburger-one {
-      top: 22px;
+      top: 23px;
       transform: rotate(45deg); }
     .gud-style__header .gud-style__hamburger.open .hamburger-two {
       opacity: 0; }
     .gud-style__header .gud-style__hamburger.open .hamburger-three {
-      top: 14px;
+      top: 19px;
       transform: rotate(-45deg); }
   .gud-style__header .gud-style__logo {
     position: absolute;
@@ -598,7 +603,7 @@ section:first-of-type .slide:first-child .image {
     left: 10px; }
     @media all and (min-width: 46.25em) {
       .gud-style__header .gud-style__intro {
-        width: 100%;
+        width: 93%;
         left: 0;
         bottom: 50px; } }
   .gud-style__header .gud-style__headline svg {
@@ -642,7 +647,7 @@ section:first-of-type .slide:first-child .image {
     font-weight: 900; }
     @media all and (min-width: 46.25em) {
       .gud-style__header h1 {
-        width: 380px; } }
+        width: 280px; } }
   .gud-style__header .gud-style__date {
     color: #c70000; }
 

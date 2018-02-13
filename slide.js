@@ -25,10 +25,18 @@ function checkVisible(elm) {
 function hamburgler() {
     var ham = document.querySelector('.gud-style__hamburger');
     var overlay = document.querySelector('.gud-style__menu_overlay')
+    var section = document.getElementsByClassName('nav-link');
     ham.addEventListener('click', function(){
         this.classList.toggle('open');
         overlay.classList.toggle('open');
     });
+    for(i=0; i < section.length; i++) {
+        section[i].addEventListener('click', function(){
+            console.log(this);
+            ham.classList.toggle('open');
+            overlay.classList.toggle('open');
+        });
+    }
 }
 
 hamburgler();
