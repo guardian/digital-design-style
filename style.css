@@ -380,7 +380,13 @@ section h2 {
   padding: 12px; }
 
 section .slide {
-  height: 100vh; }
+  height: auto;
+  overflow: hidden; }
+  @media all and (min-width: 61.25em) {
+    section .slide {
+      height: 100vh; } }
+  section .slide:first-child p .title {
+    display: block !important; }
   section .slide.intro {
     height: 100vh; }
   section .slide .text {
@@ -392,18 +398,34 @@ section .slide {
         width: 30vw;
         height: 100%; } }
     section .slide .text p {
-      font-size: 18px;
+      font-size: 16px;
       line-height: 20px;
       font-family: 'GH Guardian Headline';
       font-weight: 400;
       color: #333;
-      position: absolute;
-      transform: translateY(-50%);
-      top: 50%;
-      left: 24px;
+      position: relative;
+      top: 0px;
+      transform: none;
+      left: 10px;
       right: 0;
-      max-width: 350px;
-      z-index: 1; }
+      max-width: 90%;
+      z-index: 1;
+      padding-bottom: 12px;
+      margin-top: 12px; }
+      @media all and (min-width: 46.25em) {
+        section .slide .text p {
+          position: absolute;
+          transform: translateY(-50%);
+          top: 50%;
+          left: 24px;
+          max-width: 350px;
+          font-size: 20px;
+          line-height: 22px; } }
+      section .slide .text p .title {
+        display: none;
+        font-weight: 900;
+        font-size: 32px;
+        margin-bottom: 12px; }
       section .slide .text p:before {
         width: 100%;
         height: 1px;
@@ -416,21 +438,23 @@ section .slide {
     right: 0;
     bottom: 0;
     width: 100%;
-    height: 100vh;
+    height: auto;
     background-color: #fff;
-    visibility: hidden;
+    visibility: visible;
     position: relative; }
     @media all and (min-width: 46.25em) {
       section .slide .image {
         position: fixed;
-        width: 70vw; } }
+        width: 70vw;
+        height: 100vh;
+        visibility: hidden; } }
     section .slide .image .image__inner {
       position: relative;
-      opacity: 0;
+      opacity: 1;
       transition: opacity 400ms ease-out;
       width: 100%;
       min-height: 400px; }
-      @media all and (min-width: 61.25em) {
+      @media all and (min-width: 46.25em) {
         section .slide .image .image__inner {
           position: absolute;
           width: auto;
@@ -438,7 +462,8 @@ section .slide {
           top: 24px;
           left: 24px;
           right: 24px;
-          bottom: 24px; } }
+          bottom: 24px;
+          opacity: 0; } }
       section .slide .image .image__inner img {
         max-width: 100%;
         max-height: 100%;
@@ -446,6 +471,19 @@ section .slide {
         top: 50%;
         transform: translate(-50%, -50%);
         left: 50%; }
+    section .slide .image:before {
+      content: attr(data-section-number);
+      position: fixed;
+      bottom: 40px;
+      left: 24px;
+      font-family: "Guardian Text Sans Web";
+      font-size: 16px;
+      letter-spacing: -2px;
+      background-color: #fff;
+      display: inline-block;
+      min-width: 200px;
+      z-index: -1;
+      color: #999; }
     section .slide .image:after {
       content: attr(data-section-title);
       position: fixed;
@@ -479,9 +517,13 @@ section:first-of-type .slide:first-child .image {
   .gud-style__header .gud-style__logo {
     position: absolute;
     top: 10px;
-    right: 50px;
-    width: 200px;
+    right: 10px;
+    width: 150px;
     height: auto; }
+    @media all and (min-width: 46.25em) {
+      .gud-style__header .gud-style__logo {
+        right: 50px;
+        width: 200px; } }
     .gud-style__header .gud-style__logo svg {
       width: 100%;
       height: auto;
@@ -490,23 +532,31 @@ section:first-of-type .slide:first-child .image {
         fill: #121212; }
   .gud-style__header .gud-style__intro {
     position: absolute;
-    bottom: 50px;
-    width: 90%;
+    bottom: 20px;
+    width: 76%;
     left: 2%; }
     @media all and (min-width: 46.25em) {
       .gud-style__header .gud-style__intro {
         width: 100%;
-        left: 0; } }
+        left: 0;
+        bottom: 50px; } }
   .gud-style__header .gud-style__headline svg {
     position: relative;
     left: 2%;
     top: 76px;
-    width: 90%; }
+    width: 96%; }
     @media all and (min-width: 46.25em) {
       .gud-style__header .gud-style__headline svg {
-        left: 14.9vw;
-        top: 76px;
-        width: auto; } }
+        max-width: 100%;
+        max-height: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        left: 50%; } }
+    @media all and (min-width: 81.25em) {
+      .gud-style__header .gud-style__headline svg {
+        top: 40%;
+        left: 50.5%; } }
   .gud-style__header .gud-style__headline:before {
     content: '';
     display: block;

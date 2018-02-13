@@ -33,9 +33,9 @@
            {{#each slides}}
             <div class='slide'>
               <div class='text'>
-                <p>{{Text}}</p>
+                <p><span class="title">{{../Title}}</span>{{Text}}</p>
               </div>
-              <div {{#if Colour}}style="background-color:{{Colour}}"{{/if}} class='image' data-section-title='{{../Title}}'>
+              <div {{#if Colour}}style="background-color:{{Colour}}"{{/if}} class='image' data-section-number='{{inc @index}} / {{../slides.length}}' data-section-title='{{../Title}}'>
                   <div class='image__inner'>
                       <img src="{{Image}}">
                   </div>

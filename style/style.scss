@@ -36,7 +36,21 @@ section {
     }
 
     .slide {
-      height: 100vh;
+      height: auto;
+      overflow: hidden;
+
+      @include mq($from: desktop) {
+          height: 100vh;
+      }
+
+      &:first-child {
+          p {
+              .title {
+                  display: block !important;
+              }
+          }
+      }
+
       &.intro {
         height: 100vh;
       }
@@ -50,18 +64,37 @@ section {
             height: 100%;
         }
         p {
-          font-size: 18px;
+          font-size: 16px;
           line-height: 20px;
           font-family:'GH Guardian Headline';
           font-weight: 400;
           color: #333;
-          position: absolute;
-          transform: translateY(-50%);
-          top: 50%;
-          left: 24px;
+          position: relative;
+          top: 0px;
+          transform: none;
+          left: 10px;
           right: 0;
-          max-width: 350px;
+          max-width: 90%;
           z-index: 1;
+          padding-bottom: 12px;
+          margin-top: 12px;
+
+          @include mq($from: tablet) {
+              position: absolute;
+              transform: translateY(-50%);
+              top: 50%;
+              left: 24px;
+              max-width: 350px;
+              font-size: 20px;
+              line-height: 22px;
+          }
+
+          .title {
+              display: none;
+              font-weight: 900;
+              font-size: 32px;
+              margin-bottom: 12px;
+          }
 
           &:before {
               width: 100%;
@@ -70,7 +103,6 @@ section {
               margin-bottom: 6px;
               content: '';
               display: block;
-
           }
         }
       }
@@ -79,24 +111,26 @@ section {
         right: 0;
         bottom: 0;
         width: 100%;
-        height: 100vh;
+        height: auto;
         background-color: #fff;
-        visibility: hidden;
+        visibility: visible;
         position: relative;
 
         @include mq($from: tablet) {
             position: fixed;
             width: 70vw;
+            height: 100vh;
+            visibility: hidden;
         }
 
         .image__inner {
             position: relative;
-            opacity: 0;
+            opacity: 1;
             transition: opacity 400ms ease-out;
             width: 100%;
             min-height: 400px;
 
-            @include mq($from: desktop) {
+            @include mq($from: tablet) {
                 position: absolute;
                 width: auto;
                 min-height: auto;
@@ -104,6 +138,7 @@ section {
                 left: 24px;
                 right: 24px;
                 bottom: 24px;
+                opacity: 0;
             }
 
             img {
@@ -115,6 +150,21 @@ section {
                 left: 50%;
             }
         }
+        &:before {
+            content: attr(data-section-number);
+            position: fixed;
+            bottom:40px;
+            left: 24px;
+            font-family: "Guardian Text Sans Web";
+            font-size: 16px;
+            letter-spacing: -2px;
+            background-color: #fff;
+            display: inline-block;
+            min-width: 200px;
+            z-index: -1;
+            color: #999;
+        }
+
         &:after {
             content: attr(data-section-title);
             position: fixed;
@@ -164,9 +214,14 @@ section {
     .gud-style__logo {
         position: absolute;
         top: 10px;
-        right: 50px;
-        width: 200px;
+        right: 10px;
+        width: 150px;
         height: auto;
+
+        @include mq($from: tablet) {
+            right: 50px;
+            width: 200px;
+        }
 
         svg {
             width: 100%;
@@ -181,13 +236,14 @@ section {
 
     .gud-style__intro {
         position: absolute;
-        bottom: 50px;
-        width: 90%;
+        bottom: 20px;
+        width: 76%;
         left: 2%;
 
         @include mq($from: tablet) {
             width: 100%;
             left: 0;
+            bottom: 50px;
         }
     }
 
@@ -196,12 +252,20 @@ section {
             position: relative;
             left: 2%;
             top: 76px;
-            width: 90%;
+            width: 96%;
 
             @include mq($from: tablet) {
-                left: 14.9vw;
-                top: 76px;
-                width: auto;
+                max-width: 100%;
+                max-height: 100%;
+                position: absolute;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                left: 50%;
+            }
+
+            @include mq($from: wide) {
+                top: 40%;
+                left: 50.5%;
             }
         }
         &:before {
