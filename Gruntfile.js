@@ -95,6 +95,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
 
   grunt.registerTask('build', ['clean:root','copy']);
-  grunt.registerTask('compile', ['clean','wget','compile-handlebars']);
+  grunt.registerTask('compile', ['clean','wget','compile-handlebars','copy']);
   grunt.registerTask('default', ['sass','clean', 'wget','compile-handlebars','build','connect','watch']);
 };

@@ -370,6 +370,40 @@ body {
   font-size: 18px;
   font-family: 'GH Guardian Headline'; }
 
+.gud-style__wrapper {
+  width: 100%;
+  height: 600px;
+  position: relative; }
+  @supports (height: 100vh) {
+    .gud-style__wrapper {
+      height: 100vh; } }
+  @media all and (min-width: 61.25em) {
+    .gud-style__wrapper {
+      margin-left: auto;
+      margin-right: auto;
+      width: 980px; } }
+  @media all and (min-width: 71.25em) {
+    .gud-style__wrapper {
+      width: 1140px; } }
+  @media all and (min-width: 81.25em) {
+    .gud-style__wrapper {
+      width: 1300px; } }
+  @media all and (min-width: 125em) {
+    .gud-style__wrapper {
+      width: 80%; } }
+
+.desktop-only {
+  display: none; }
+  @media all and (min-width: 46.25em) {
+    .desktop-only {
+      display: block; } }
+
+.mobile-only {
+  display: block; }
+  @media all and (min-width: 46.25em) {
+    .mobile-only {
+      display: none; } }
+
 section h2 {
   font-weight: 200;
   font-family: 'GH Guardian Headline';
@@ -385,10 +419,37 @@ section .slide {
   @media all and (min-width: 61.25em) {
     section .slide {
       height: 100vh; } }
-  section .slide:first-child p .title {
+  section .slide:first-child .paragraph .title {
     display: block !important; }
   section .slide.intro {
     height: 100vh; }
+  section .slide .item-list {
+    font-size: 16px;
+    line-height: 20px;
+    font-family: 'GH Guardian Headline';
+    font-weight: 400;
+    color: #121212;
+    position: relative;
+    top: 0px;
+    transform: none;
+    right: 0;
+    max-width: 90%;
+    z-index: 1;
+    padding-bottom: 12px;
+    margin-top: 12px; }
+    @media all and (min-width: 46.25em) {
+      section .slide .item-list {
+        max-width: 350px;
+        font-size: 20px;
+        line-height: 24px; } }
+    section .slide .item-list li {
+      background-color: #ffe500;
+      display: inline-block;
+      margin-top: 4px;
+      padding-left: 4px;
+      padding-right: 4px;
+      padding-bottom: 2px;
+      font-weight: 900; }
   section .slide .text {
     width: 80%;
     position: relative;
@@ -397,7 +458,7 @@ section .slide {
       section .slide .text {
         width: 30vw;
         height: 100%; } }
-    section .slide .text p {
+    section .slide .text .paragraph {
       font-size: 16px;
       line-height: 20px;
       font-family: 'GH Guardian Headline';
@@ -413,26 +474,32 @@ section .slide {
       padding-bottom: 12px;
       margin-top: 12px; }
       @media all and (min-width: 46.25em) {
-        section .slide .text p {
+        section .slide .text .paragraph {
           position: absolute;
           transform: translateY(-50%);
           top: 50%;
           left: 24px;
           max-width: 350px;
           font-size: 20px;
-          line-height: 22px; } }
-      section .slide .text p .title {
+          line-height: 24px; } }
+      section .slide .text .paragraph .title {
         display: none;
         font-weight: 900;
         font-size: 32px;
         margin-bottom: 12px; }
-      section .slide .text p:before {
+      section .slide .text .paragraph:before {
         width: 100%;
         height: 1px;
-        background-color: #121212;
+        background-color: #dcdcdc;
         margin-bottom: 6px;
         content: '';
         display: block; }
+      section .slide .text .paragraph a {
+        color: #c70000;
+        text-decoration: none;
+        border-bottom: 1px solid #dcdcdc; }
+        section .slide .text .paragraph a:hover {
+          border-bottom: 1px solid #c70000; }
   section .slide .image {
     top: 0;
     right: 0;
@@ -561,8 +628,7 @@ section:first-of-type .slide:first-child .image {
     background-color: #121212; }
     @media all and (min-width: 46.25em) {
       .gud-style__header .gud-style__hamburger {
-        border: 1px solid #121212;
-        background-color: transparent; } }
+        background-color: #121212; } }
     .gud-style__header .gud-style__hamburger .hamburger-one, .gud-style__header .gud-style__hamburger .hamburger-two, .gud-style__header .gud-style__hamburger .hamburger-three {
       height: 2px;
       background-color: #fff;
@@ -571,7 +637,7 @@ section:first-of-type .slide:first-child .image {
       left: 10px; }
       @media all and (min-width: 46.25em) {
         .gud-style__header .gud-style__hamburger .hamburger-one, .gud-style__header .gud-style__hamburger .hamburger-two, .gud-style__header .gud-style__hamburger .hamburger-three {
-          background-color: #121212; } }
+          background-color: #fff; } }
     .gud-style__header .gud-style__hamburger .hamburger-one {
       top: 17px; }
     .gud-style__header .gud-style__hamburger .hamburger-two {
@@ -610,7 +676,7 @@ section:first-of-type .slide:first-child .image {
     left: 10px; }
     @media all and (min-width: 46.25em) {
       .gud-style__header .gud-style__intro {
-        width: 93%;
+        width: 90%;
         left: 0;
         bottom: 50px; } }
     .gud-style__header .gud-style__intro h1:before {
@@ -627,33 +693,21 @@ section:first-of-type .slide:first-child .image {
     position: relative;
     left: 2%;
     top: 76px;
-    width: 96%; }
+    width: 85%; }
+    .gud-style__header .gud-style__headline svg path {
+      fill: #121212; }
     @media all and (min-width: 46.25em) {
       .gud-style__header .gud-style__headline svg {
         max-width: 100%;
         max-height: 100%;
         position: absolute;
-        top: 50%;
+        top: 40%;
         transform: translate(-50%, -50%);
         left: 50%; } }
     @media all and (min-width: 81.25em) {
       .gud-style__header .gud-style__headline svg {
         top: 40%;
         left: 50.5%; } }
-  .gud-style__header .gud-style__headline:before {
-    content: '';
-    display: block;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 30vw;
-    right: 0;
-    width: 1px;
-    background-color: #121212;
-    display: none; }
-    @media all and (min-width: 46.25em) {
-      .gud-style__header .gud-style__headline:before {
-        display: block; } }
   .gud-style__header h1 {
     width: 100%;
     margin-left: auto;
@@ -682,6 +736,15 @@ section:first-of-type .slide:first-child .image {
       transform: translate(-34%, -50%);
       left: 38%;
       margin-bottom: 0px; } }
+  @media all and (min-width: 71.25em) {
+    .colour__list {
+      max-width: 900px; } }
+  @media all and (min-width: 81.25em) {
+    .colour__list {
+      max-width: 800px; } }
+  @media all and (min-width: 125em) {
+    .colour__list {
+      max-width: 1000px; } }
   .colour__list ul {
     display: flex;
     flex-direction: row;
@@ -692,6 +755,10 @@ section:first-of-type .slide:first-child .image {
   line-height: 16px;
   font-weight: 500;
   font-family: 'GH Guardian Headline'; }
+  @media all and (min-width: 81.25em) {
+    .colours-container {
+      font-size: 16px;
+      line-height: 21px; } }
 
 .colours {
   height: 100px;
@@ -700,6 +767,18 @@ section:first-of-type .slide:first-child .image {
   margin-right: 4px;
   margin-bottom: 4px;
   margin-top: 12px; }
+  @media all and (min-width: 61.25em) {
+    .colours {
+      width: 120px;
+      height: 120px; } }
+  @media all and (min-width: 81.25em) {
+    .colours {
+      width: 120px;
+      height: 120px; } }
+  @media all and (min-width: 125em) {
+    .colours {
+      width: 170px;
+      height: 170px; } }
 
 .bold {
   font-weight: 900; }
