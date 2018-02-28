@@ -115,8 +115,6 @@ section {
 
           @include mq($from: tablet){
               max-width: 350px;
-              font-size: 20px;
-              line-height: 24px;
           }
 
           li {
@@ -130,7 +128,7 @@ section {
           }
       }
       .text {
-        width: 80%;
+        width: 100%;
         position: relative;
         height: auto;
 
@@ -149,7 +147,7 @@ section {
           transform: none;
           left: 10px;
           right: 0;
-          max-width: 90%;
+          max-width: 95%;
           z-index: 1;
           padding-bottom: 12px;
           margin-top: 12px;
@@ -248,6 +246,11 @@ section {
             min-width: 200px;
             z-index: -1;
             color: #999;
+            display: none;
+
+            @include mq($from: desktop) {
+                display: block;
+            }
         }
 
         &:after {
@@ -262,6 +265,11 @@ section {
             min-width: 200px;
             z-index: -1;
             color: #999;
+            display: none;
+
+            @include mq($from: desktop) {
+                display: block;
+            }
         }
       }
       &.on {
@@ -461,7 +469,7 @@ section {
         svg {
             position: relative;
             left: 2%;
-            top: 76px;
+            top: 130px;
             width: 85%;
 
             path {

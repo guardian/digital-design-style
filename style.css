@@ -439,9 +439,7 @@ section .slide {
     margin-top: 12px; }
     @media all and (min-width: 46.25em) {
       section .slide .item-list {
-        max-width: 350px;
-        font-size: 20px;
-        line-height: 24px; } }
+        max-width: 350px; } }
     section .slide .item-list li {
       background-color: #ffe500;
       display: inline-block;
