@@ -449,7 +449,7 @@ section .slide {
       padding-bottom: 2px;
       font-weight: 900; }
   section .slide .text {
-    width: 80%;
+    width: 100%;
     position: relative;
     height: auto; }
     @media all and (min-width: 46.25em) {
@@ -467,7 +467,7 @@ section .slide {
       transform: none;
       left: 10px;
       right: 0;
-      max-width: 90%;
+      max-width: 95%;
       z-index: 1;
       padding-bottom: 12px;
       margin-top: 12px; }
@@ -548,7 +548,11 @@ section .slide {
       display: inline-block;
       min-width: 200px;
       z-index: -1;
-      color: #999; }
+      color: #999;
+      display: none; }
+      @media all and (min-width: 61.25em) {
+        section .slide .image:before {
+          display: block; } }
     section .slide .image:after {
       content: attr(data-section-title);
       position: fixed;
@@ -560,7 +564,11 @@ section .slide {
       display: inline-block;
       min-width: 200px;
       z-index: -1;
-      color: #999; }
+      color: #999;
+      display: none; }
+      @media all and (min-width: 61.25em) {
+        section .slide .image:after {
+          display: block; } }
   section .slide.on .image {
     transition: opacity 400ms ease-in;
     visibility: visible; }
@@ -690,7 +698,7 @@ section:first-of-type .slide:first-child .image {
   .gud-style__header .gud-style__headline svg {
     position: relative;
     left: 2%;
-    top: 76px;
+    top: 130px;
     width: 85%; }
     .gud-style__header .gud-style__headline svg path {
       fill: #121212; }
