@@ -83,7 +83,7 @@ module.exports = function(grunt) {
             postHTML: 'templates/footer.html',
             templateData: 'data/style-guide.json'
         }
-    }
+    },
   });
 
   grunt.loadNpmTasks('grunt-compile-handlebars');
@@ -97,4 +97,12 @@ module.exports = function(grunt) {
   grunt.registerTask('build', ['clean:root','copy']);
   grunt.registerTask('compile', ['clean','wget','compile-handlebars','copy']);
   grunt.registerTask('default', ['sass','clean', 'wget','compile-handlebars','build','connect','watch']);
+
+  grunt.registerTask('log', 'This logs the json file', function(){
+      grunt.log.writeln('something is happening');
+      var json = [];
+      json = grunt.file.readJSON('data/style-guide.json');
+      grunt.log.writeln(json);
+  })
+
 };
