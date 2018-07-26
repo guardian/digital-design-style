@@ -580,19 +580,25 @@ section .slide {
 section:first-of-type .slide:first-child .image {
   visibility: visible; }
 
+.gud-style__cta {
+  cursor: pointer; }
+  .gud-style__cta:hover circle {
+    fill: #ff4e36; }
+
 .gud-style__header {
   background-color: #ffe500;
   height: 100vh;
   position: relative;
   z-index: 10;
   width: 100%;
-  overflow-x: hidden; }
+  overflow: hidden; }
   .gud-style__header .gud-style__menu_overlay {
     height: 100vh;
     width: 100%;
     background-color: #00b2ff;
     z-index: 10;
     position: fixed;
+    left: 0;
     overflow: hidden;
     visibility: hidden;
     opacity: 0;
@@ -624,6 +630,7 @@ section:first-of-type .slide:first-child .image {
             font-size: 50px;
             line-height: 52px; } }
   .gud-style__header .gud-style__hamburger {
+    cursor: pointer;
     position: fixed;
     top: 10px;
     left: 10px;
@@ -698,8 +705,9 @@ section:first-of-type .slide:first-child .image {
   .gud-style__header .gud-style__headline svg {
     position: relative;
     left: 2%;
-    top: 130px;
-    width: 85%; }
+    top: 120px;
+    width: 85%;
+    height: auto; }
     .gud-style__header .gud-style__headline svg path {
       fill: #121212; }
     @media all and (min-width: 46.25em) {
@@ -728,68 +736,84 @@ section:first-of-type .slide:first-child .image {
   .gud-style__header .gud-style__date {
     color: #c70000; }
 
-.colour__list {
+.palette-wrapper {
   position: relative;
-  width: 100%;
-  left: 10px;
-  margin-bottom: 24px; }
+  margin: 0 10px; }
   @media all and (min-width: 46.25em) {
-    .colour__list {
-      max-width: 700px;
+    .palette-wrapper {
       max-height: 100%;
       position: absolute;
       top: 50%;
-      transform: translate(-34%, -50%);
-      left: 38%;
-      margin-bottom: 0px; } }
-  @media all and (min-width: 71.25em) {
-    .colour__list {
-      max-width: 900px; } }
-  @media all and (min-width: 81.25em) {
-    .colour__list {
-      max-width: 800px; } }
-  @media all and (min-width: 125em) {
-    .colour__list {
-      max-width: 1000px; } }
-  .colour__list ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap; }
+      transform: translateY(-50%);
+      left: 0;
+      right: 40px;
+      margin: 0; } }
 
-.colours-container {
-  font-size: 13px;
-  line-height: 16px;
-  font-weight: 500;
-  font-family: 'GH Guardian Headline'; }
-  @media all and (min-width: 81.25em) {
-    .colours-container {
-      font-size: 16px;
-      line-height: 21px; } }
+.swatch-group {
+  margin-bottom: 6px; }
+  .swatch-group h4 {
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 6px; }
+  .swatch-group ul {
+    display: flex; }
+    @media all and (max-width: 61.24em) {
+      .swatch-group ul {
+        flex-wrap: wrap; } }
 
-.colours {
-  height: 100px;
-  width: 100px;
-  flex-basis: 100px;
-  margin-right: 4px;
-  margin-bottom: 4px;
-  margin-top: 12px; }
+.swatch-container {
+  background-color: #ffffff;
+  flex-grow: 1;
+  flex-basis: 0;
+  transition: all .2s ease-in-out;
+  box-shadow: 0 0 0 3px transparent; }
+  .swatch-container--selected {
+    box-shadow: 0 0 0 3px rgba(61, 181, 64, 0.6);
+    z-index: 1; }
   @media all and (min-width: 61.25em) {
-    .colours {
-      width: 120px;
-      height: 120px; } }
-  @media all and (min-width: 81.25em) {
-    .colours {
-      width: 120px;
-      height: 120px; } }
-  @media all and (min-width: 125em) {
-    .colours {
-      width: 170px;
-      height: 170px; } }
+    .swatch-container {
+      cursor: pointer; }
+      .swatch-container:hover {
+        flex: 2;
+        z-index: 1; } }
+  @media all and (min-width: 61.25em) and (min-width: 71.25em) {
+    .swatch-container--main {
+      flex-grow: 2; }
+      .swatch-container--main:hover {
+        flex: 3; } }
 
-.bold {
-  font-weight: 900; }
+.swatch {
+  box-sizing: border-box;
+  height: 50px;
+  width: 100%;
+  transition: transform .3s ease-in-out; }
+  .swatch[style*="background-color:#ffffff"] {
+    border: 1px solid #f6f6f6; }
 
-.sans {
+.swatch-text {
+  font-size: 12px;
+  line-height: 1.3;
   font-family: "Guardian Text Sans Web";
-  font-weight: 200;
-  line-height: 16px; }
+  padding: 3px 3px 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.name {
+  font-weight: 600; }
+
+.hex {
+  font-weight: 200; }
+  .hex:after {
+    content: ' Copy';
+    color: #767676;
+    opacity: 0;
+    transition: all .2s ease-in-out; }
+    @media all and (max-width: 61.24em) {
+      .hex:after {
+        display: block; } }
+    .swatch-container:hover .hex:after {
+      opacity: 1; }
+    .swatch-container--selected .hex:after {
+      content: ' Copied to clipboard';
+      color: #3db540; }
