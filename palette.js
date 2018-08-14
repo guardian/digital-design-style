@@ -20,3 +20,18 @@ clipboard.on('error', function(e) {
     console.error('Action:', e.action);
     console.error('Trigger:', e.trigger);
 });
+
+var colourToggle = document.querySelectorAll('.colour-toggle');
+var swatchText = document.querySelectorAll('.palette-wrapper');
+
+for(var i=0; i<colourToggle.length; i++) {
+    console.log(colourToggle[i], i);
+    console.log(swatchText[i], i);
+
+    colourToggle[i].addEventListener('click', function(i) {
+        for(var j = 0; j < colourToggle.length; j++) {
+            swatchText[j].classList.toggle('rgb-view');
+            colourToggle[j].classList.toggle('active');
+        }
+    })
+}

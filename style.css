@@ -582,7 +582,8 @@ section:first-of-type .slide:first-child .image {
 
 .gud-style__cta {
   cursor: pointer; }
-  .gud-style__cta:hover circle {
+  g
+.gud-style__cta:hover circle {
     fill: #ff4e36; }
 
 .gud-style__header {
@@ -804,6 +805,8 @@ section:first-of-type .slide:first-child .image {
 
 .hex {
   font-weight: 200; }
+  .rgb-view .hex {
+    display: none; }
   .hex:after {
     content: ' Copy';
     color: #767676;
@@ -817,3 +820,35 @@ section:first-of-type .slide:first-child .image {
     .swatch-container--selected .hex:after {
       content: ' Copied to clipboard';
       color: #3db540; }
+
+.rgb {
+  display: none;
+  font-weight: 200; }
+  .rgb-view .rgb {
+    display: block; }
+  .rgb strong {
+    color: #767676; }
+
+.colour-toggle {
+  cursor: pointer;
+  border: 1px solid #dcdcdc;
+  border-radius: 21px;
+  box-sizing: border-box;
+  cursor: pointer;
+  color: #121212;
+  display: block;
+  font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 16px;
+  height: 42px;
+  line-height: 40px;
+  margin-top: 24px;
+  outline: 0;
+  padding: 0 20px;
+  position: relative; }
+  .colour-toggle:hover {
+    background-color: #f6f6f6;
+    border-color: #999; }
+  .colour-toggle:before {
+    content: 'RGB colours'; }
+  .colour-toggle.active:before {
+    content: 'Hex colours'; }

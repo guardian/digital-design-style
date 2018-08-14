@@ -108,8 +108,13 @@
                         {{/each}}
                     </ul>
                     {{/if}}
+
+                    {{#if colourPalette}}
+                        Showing: <button class="colour-toggle"></button>
+                    {{/if}}
                 </div>
               </div>
+
               <div {{#if Colour}}style="background-color:{{Colour}}"{{/if}} class='image' data-section-number='{{inc @index}} / {{../slides.length}}' data-section-title='{{../Title}}'>
                   {{#if Image}}
                       <div class='image__inner'>
@@ -124,11 +129,12 @@
                                   <h4>{{name}}</h4>
                                   <ul>
                                       {{#each colours}}
-                                        <li class="swatch-container {{#if isMain}}swatch-container--main{{/if}}" data-clipboard-text="{{colour}}">
-                                            <div class="swatch" style="background-color:{{colour}}"></div>
+                                        <li class="swatch-container {{#if isMain}}swatch-container--main{{/if}}" data-clipboard-text="{{hex}}">
+                                            <div class="swatch" style="background-color:{{hex}}"></div>
                                             <div class="swatch-text">
                                                 <p class="name">{{colourName}}</p>
-                                                <p class="hex">{{colour}}</p>
+                                                <p class="hex">{{hex}}</p>
+                                                <p class="rgb"><strong>RGB:</strong> {{rgb-r}}, {{rgb-g}}, {{rgb-b}}</p>
                                             </div>
                                         </li>
                                       {{/each}}

@@ -296,7 +296,7 @@ section {
 
 .gud-style__cta {
     cursor: pointer;
-
+g
     &:hover {
         circle {
             fill: #ff4e36;
@@ -616,6 +616,10 @@ section {
 .hex {
     font-weight: 200;
 
+    .rgb-view & {
+        display: none;
+    }
+
     &:after {
         content: ' Copy';
         color: #767676;
@@ -633,6 +637,52 @@ section {
         .swatch-container--selected & {
             content: ' Copied to clipboard';
             color: #3db540;
+        }
+    }
+}
+
+.rgb {
+    display: none;
+    font-weight: 200;
+
+    .rgb-view & {
+        display: block;
+    }
+
+    strong {
+        color: #767676;
+    }
+}
+
+.colour-toggle {
+    cursor: pointer;
+    border: 1px solid #dcdcdc;
+    border-radius: 21px;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: #121212;
+    display: block;
+    font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 16px;
+    height: 42px;
+    line-height: 40px;
+    margin-top: 24px;
+    outline: 0;
+    padding: 0 20px;
+    position: relative;
+
+    &:hover {
+            background-color: #f6f6f6;
+            border-color: #999;
+        }
+
+    &:before {
+        content: 'Change to RGB';
+    }
+
+    &.active {
+        &:before {
+            content: 'Change to HEX';
         }
     }
 }
