@@ -849,6 +849,6 @@ section:first-of-type .slide:first-child .image {
     background-color: #f6f6f6;
     border-color: #999; }
   .colour-toggle:before {
-    content: 'RGB colours'; }
+    content: 'Change to RGB'; }
   .colour-toggle.active:before {
-    content: 'Hex colours'; }
+    content: 'Change to HEX'; }
